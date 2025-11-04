@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>그린삭스 | Green Socks Foundation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f6fff3;
+    color: #333;
+  }
+
+  header {
+    height: 100vh;
+    background: linear-gradient(135deg, #a8e063, #56ab2f);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+
+  header img {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  section h2 {
+    color: #56ab2f;
+    border-left: 6px solid #56ab2f;
+    padding-left: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    background: rgba(86, 171, 47, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .activity {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    transition: 0.3s;
+  }
+
+  .activity:hover {
+    transform: translateY(-5px);
+  }
+
+  .cta {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #eaffea;
+  }
+
+  .cta button {
+    background: #56ab2f;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .cta button:hover {
+    background: #3e8e1b;
+  }
+
+  footer {
+    text-align: center;
+    background: #2e5f1f;
+    color: #fff;
+    padding: 2rem 1rem;
+  }
+
+  footer p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+
+  /* scroll fade-in effect */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Green Socks Logo" />
+    <h1>그린삭스 (Green Socks)</h1>
+    <p>작은 발걸음이, 지구를 바꾼다 🌍</p>
+  </header>
+
+  <section id="about" class="fade-in">
+    <h2>🧦 재단 소개</h2>
+    <p>
+      <strong>그린삭스(Green Socks)</strong>는 고등학생들이 만든 <span class="highlight">비영리 환경재단</span>으로,  
+      일상 속의 작은 실천으로 지구를 지키자는 목표로 시작되었습니다.  
+      우리는 ‘양말처럼 매일 신는 습관’이 환경을 바꿀 수 있다고 믿습니다.
+    </p>
+  </section>
+
+  <section id="activity" class="fade-in">
+    <h2>🌿 핵심 활동: 학교 제로웨이스트 챌린지</h2>
+    <div class="activity">
+      <p>
+        매달 한 가지 환경 실천 목표를 정해 <strong>전교생이 함께 참여하는 캠페인</strong>을 진행합니다.
+      </p>
+      <ul>
+        <li>3월 – 일회용컵 대신 텀블러 사용</li>
+        <li>4월 – 점심시간 음식물 쓰레기 줄이기</li>
+        <li>5월 – 교실 분리배출 100% 달성</li>
+      </ul>
+      <p>
+        활동 결과는 SNS와 학교 게시판에 공유되며, 참여 학생에게는 <strong>그린 포인트</strong>가 주어집니다.  
+        포인트를 모아 친환경 굿즈(리사이클 양말, 식물 키트 등)로 교환할 수 있어요 🌱
+      </p>
+    </div>
+  </section>
+
+  <section id="join" class="fade-in cta">
+    <h2>🌏 함께해요, 그린삭스!</h2>
+    <p>우리의 작은 발걸음이 모여, 더 푸른 세상을 만듭니다.</p>
+    <button id="joinBtn">참여 신청하기</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Green Socks Foundation</p>
+    <p>문의: greensocks.foundation@gmail.com</p>
+  </footer>
+
+<script>
+  // 스크롤 시 fade-in 효과
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // 참여 버튼 클릭 이벤트
+  document.getElementById("joinBtn").addEventListener("click", () => {
+    alert("그린삭스 참여 신청 페이지는 곧 공개됩니다! 🌱");
+  });
+</script>
+</body>
+</html>
